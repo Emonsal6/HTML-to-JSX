@@ -1,9 +1,15 @@
+/* ============================================
+   Reset & base
+   ============================================ */
+
+/* Remove default margins/padding; border-box for predictable widths */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Page: centered content, full-height, warm off-white background */
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: #f7f7f4;
@@ -14,6 +20,11 @@ body {
     padding: 20px;
 }
 
+/* ============================================
+   Cards layout
+   ============================================ */
+
+/* Wrapper: horizontal row of cards, 24px gap */
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -23,6 +34,7 @@ body {
     align-items: flex-start;
 }
 
+/* Single card: column layout, fixed width, cream background */
 .card {
     display: flex;
     flex-direction: column;
@@ -34,11 +46,13 @@ body {
     flex-shrink: 0;
 }
 
+/* Top section: title, price, features (no button) */
 .card-top {
     display: flex;
     flex-direction: column;
 }
 
+/* Plan name (e.g. Hobby, Pro) */
 .card-title {
     font-size: 22px;
     line-height: 28px;
@@ -47,6 +61,7 @@ body {
     margin-bottom: 8px;
 }
 
+/* Price row: amount + optional period aligned on baseline */
 .card-price {
     font-size: 20px;
     color: rgba(38, 37, 30, 0.5);
@@ -60,21 +75,25 @@ body {
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* e.g. “/mo.” — smaller, muted */
 .card-price-period {
     font-size: 14px;
     color: rgba(38, 37, 30, 0.5);
 }
 
+/* Spacer above the CTA so button sits at card bottom */
 .card-content {
     margin-bottom: 32px;
 }
 
+/* “Includes:” / “Everything in Hobby, plus:” — muted intro text */
 .includes-text {
     font-size: 16px;
     color: rgba(38, 37, 30, 0.5);
     margin: 16px 0px;
 }
 
+/* Feature list: no bullets, vertical spacing */
 .features-list {
     list-style: none;
     padding: 0;
@@ -88,6 +107,7 @@ body {
     color: #26251e;
 }
 
+/* Checkmark (✓) before each feature */
 .checkmark {
     color: #26251e;
     font-size: 14px;
@@ -95,6 +115,11 @@ body {
     font-weight: 400;
 }
 
+/* ============================================
+   Buttons
+   ============================================ */
+
+/* Base: pill shape, push to bottom of card via margin-top: auto */
 .download-button {
     margin-top: auto;
     width: fit-content;
@@ -118,6 +143,7 @@ body {
     background-color: #D8D6CE;
 }
 
+/* Primary: dark fill (main CTA) */
 .download-button.primary {
     background-color: #111;
 }
@@ -130,32 +156,45 @@ body {
 .download-button.primary:active {
     background-color: #333;
 }
+
+/* Outline: transparent with border */
 .download-button.outline {
     background-color: transparent;
     border: 1px solid #82837c;
     color: #111;
 }
+
 .download-button.outline:hover {
     border: 1px solid #910000;
     color: #910000;
 }
+
 .download-button.outline:active {
     border: 1px solid #910000;
     color: #910000;
 }
+
+/* Secondary: red fill (e.g. Download on free tier) */
 .download-button.secondary {
     background-color: #910000;
     color: #fff;
 }
+
 .download-button.secondary:hover {
     background-color: #b10000;
     color: #fff;
 }
+
 .download-button.secondary:active {
     background-color: #b10000;
     color: #fff;
 }
 
+/* ============================================
+   Page label (version badge)
+   ============================================ */
+
+/* Fixed badge at top center; light shadow */
 .page-label {
     position: fixed;
     top: 16px;
